@@ -23,8 +23,10 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    freeCodeGram
+                <a class="navbar-brand d-flex" href="{{ url('/') }}">
+                    <!--  <div> <img src="/public/svg/freecodecamplogo2.svg" alt=" "> </div>--> 
+                    <div> <img src="https://raw.githubusercontent.com/coderstape/freeCodeGram/d79365defb9baadaacb7fb33a5b74256a4ab3904/public/svg/freeCodeCampLogo.svg" alt=" " style="height: 20px; border-right: 1px solid #333;" class="pr-3" > </div>
+                    <div class="pl-3 pt-1">freeCodeGram</div>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
