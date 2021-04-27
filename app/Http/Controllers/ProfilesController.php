@@ -8,7 +8,7 @@ class ProfilesController extends Controller
 {
     public function index($user)
     {
-        dd($user);
-        return view('home');
+        $user = \App\Models\User::find($user);
+        return view('home', ['user' => $user]);
     }
 }
