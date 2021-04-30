@@ -8,7 +8,7 @@ class ProfilesController extends Controller
 {
     public function index($user)
     {
-        $user = \App\Models\User::find($user);
+        $user = \App\Models\User::findOrFail($user);
         return view('home', ['user' => $user]);
     }
 }
