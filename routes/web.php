@@ -21,6 +21,8 @@ Auth::routes();
 
 Route::get('/p/create', 'App\Http\Controllers\PostsController@create');
 
+Route::post('/p', 'App\Http\Controllers\PostsController@store');
+
 Route::get('/profile/{user}', [App\Http\Controllers\ProfilesController::class, 'index'])->name('profile.show');
 
 Auth::routes();
