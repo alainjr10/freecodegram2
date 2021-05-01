@@ -5,6 +5,9 @@
     <form action="">
         <div class="row">
             <div class="col-8 offset-2">
+                <div class="row">
+                    <h1> Add New Post</h1>
+                </div>
                 <div class="form-group row">
                     <label for="caption" class="col-md-4 col-form-label">Post Caption</label>
     
@@ -28,6 +31,10 @@
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
+                </div>
+
+                <div class="row pt-4">
+                    <button class="btn btn-primary"> Add New Post</button>
                 </div>
             </div>
         </div>
