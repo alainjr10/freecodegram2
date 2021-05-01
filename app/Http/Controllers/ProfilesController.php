@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ProfilesController extends Controller
 {
     public function index($user)
     {
-        $user = \App\Models\User::findOrFail($user);
-        return view('home', ['user' => $user]);
+        $user = User::findOrFail($user);
+        return view('profiles.index', ['user' => $user]); //or profiles/index
     }
 }
