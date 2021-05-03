@@ -5,6 +5,7 @@
     <form action="/profile/{{ $user->id }}" enctype="multipart/form-data" method="POST">
 
         @csrf
+        @method('PATCH');
         
         <div class="row">
             <div class="col-8 offset-2">
@@ -78,7 +79,7 @@
                 </div>
 
                 <div class="row pt-4">
-                    <button class="btn btn-primary"> Add New Post</button>
+                    <button class="btn btn-primary"> Update Profile</button>
                 </div>
             </div>
         </div>
