@@ -36,4 +36,10 @@ class PostsController extends Controller
 
         return redirect('/profile/' .auth()->user()->id);
     }
+
+    public function show(\App\Models\Post $post)
+    {
+        return view('posts.show', compact('post')); //returns posts/show.blade.php note how we are using the compact
+        //function here instead of using an array like we did in ProfilesController.php. compact is a shorter method of doing that
+    }
 }
