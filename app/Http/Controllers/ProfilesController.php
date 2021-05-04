@@ -8,18 +8,23 @@ use Intervention\Image\Facades\Image;
 
 class ProfilesController extends Controller
 {
-    public function index($user)
-    {
-        $user = User::findOrFail($user);
-        return view('profiles.index', ['user' => $user]); //or profiles/index returns profiles/index.blade.php
-    }
+    // public function index(User $user)
+    // {
+    //     $follows = (auth()->user()) ? auth()->user()->following->contains($user->id) : false;
+    //     $user = User::findOrFail($user);
+    //     return view('profiles.index', ['user' => $user, 'follows' => $follows],); //or profiles/index returns profiles/index.blade.php
+    // }
     
     //OR we can use a more efficient way;
     //
-    // public function index(\App\Models\User $user)   
-    // {
-    //     return view('profiles.index', compact('user'));
-    // }
+    public function index(\App\Models\User $user)   
+    {
+        $follows = (auth()->user()) ? auth()->user()->following->contains($user->id) : false;
+        //$user = User::findOrFail($user);
+        return view('profiles.index', compact('user', 'follows'));
+    }
+
+
 
     public function edit(User $user) //let's use just User instead of \App\Models\User since we imported that namespace up at line 5
     {
