@@ -26,6 +26,11 @@
                     .then(response =>{  //if succesfull, then ....
                         this.status = ! this.status //changes the status on succesful response
                         console.log(response.data);
+                    })
+                    .catch(errors => {
+                        if(errors.response.status == 401){
+                            window.location = '/login';
+                        }
                     });
             }
         },
