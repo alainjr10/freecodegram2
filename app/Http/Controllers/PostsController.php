@@ -16,6 +16,7 @@ class PostsController extends Controller
 
     public function index()
     {
+        
         $users = auth()->user()->following()->pluck('profiles.user_id');
         $posts = Post::whereIn('user_id', $users)->with('user')->latest()->paginate(5); //get user id for users found in the $users variable
         return view('posts.index', compact('posts'));
@@ -47,6 +48,7 @@ class PostsController extends Controller
 
     public function show(\App\Models\Post $post)
     {
+        //$follow = (auth()->$post->users()) ? auth()->$post->user()->following->contains($post->user->id) : false;
         return view('posts.show', compact('post')); //returns posts/show.blade.php note how we are using the compact
         //function here instead of using an array like we did in ProfilesController.php. compact is a shorter method of doing that
     }
